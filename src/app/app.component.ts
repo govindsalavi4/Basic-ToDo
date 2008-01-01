@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, HostBinding } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +7,4 @@ import { Component, ElementRef, ViewChild, HostBinding } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  list:string[]=["To Day","Personal","Grossary"];
-  activeSidebar:boolean=false;
-
-  onRightClick(e){
-    //e.preventDefault();
-    console.log(e);
-  }
-
 }

@@ -2,29 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { LeftbarComponent } from './leftbar/leftbar.component';
-import { ContentComponent } from './content/content.component';
-import {Angular2FontawesomeModule} from 'angular2-fontawesome';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModaldemoComponent } from './modaldemo/modaldemo.component';
-import { FormsModule } from '@angular/forms';
+import { TodoScreenComponent } from './todo-screen/todo-screen.component';
+import { WebsiteComponent } from './website/website.component';
+import {FormsModule} from '@angular/forms';
+import { CategoryService } from '../services/category.service';
+import { ToDoService } from '../services/to-do.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideBarComponent,
-    LeftbarComponent,
-    ContentComponent,
-    ModaldemoComponent
+    TodoScreenComponent,
+    WebsiteComponent
   ],
   imports: [
     BrowserModule,
-    Angular2FontawesomeModule,
-    NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CategoryService,ToDoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

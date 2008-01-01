@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-4">
+      <div class="list-group list-group-flush">
+        <div class="list-group-item" [ngClass]="{'active':getActiveClass(category.Cat_Id)}" *ngFor="let category of categories" (click)="onCatSelect(category.Cat_Id,$event)">
+          {{category.Name}}
+          <span class="float-right">
+            <span class="badge badge-warning">{{getTodoCount(category.Cat_Id)}}</span>
+            <span style="cursor:pointer" (click)="deleteCat(category.Cat_Id)">&times;</span>
+          </span>
+        </div>
+      </div>
+      <!-- <ul>
+        <li *ngFor="let item of categories">{{item.Name}}</li>
+      </ul> -->
+      <br/>
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Add New Category" [(ngModel)]="newCategory" name="categoryName">
+          <label style="color:blue;font-size: 15px" (click)="AddCategory()">Add</label>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-9 col-sm-8">
+      <div class="list-group list-group-flush">
+        <div class="list-group-item" *ngFor="let todo of ToDos">
+          <input type="checkbox" class="form-check-input" [(ngModel)]="todo.isCompleted" name="completeStatus">
+          {{todo.Title}}
+          <span class="float-right" style="cursor:pointer" (click)="deleteToDo(todo.Id)">&times;</span>
+        </div>
+      </div>
+      <br/>
+      <form *ngIf="selectedCategory">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Add New Todo" [(ngModel)]="newTodo" name="todoName">
+          <label style="color:blue;font-size: 15px" (click)="AddToDo()">Add</label>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
