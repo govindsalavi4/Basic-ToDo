@@ -33,10 +33,6 @@ export class ModaldemoComponent {
     }
   }
 
-
-
-  
-
   saveState(form:NgForm) {
     console.log(form.value.dp);
   }
