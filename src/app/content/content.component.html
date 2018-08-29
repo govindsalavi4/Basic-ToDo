@@ -1,0 +1,26 @@
+<div style="height:75px;background: #00e600;padding: 10px">
+  <h3 class="h3">List Name</h3>
+</div>
+<div>
+  <div class="list-group">
+    <div class="list-group-item">Item 1</div>
+    <div class="list-group-item">Item 2</div>
+    <div class="list-group-item">Item 3</div>
+    <div class="list-group-item">Item 4</div>
+    <div class="list-group-item">Item 5</div>
+    <div class="list-group-item new">New Item</div>
+  </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+  </div>
+  <div class="modal-body">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<button (click)="open(content)">click</button>
